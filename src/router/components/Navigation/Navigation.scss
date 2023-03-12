@@ -1,0 +1,14 @@
+.NavLink {
+  display: inline-block;
+  padding: var(--offset-m);
+
+  color: var(--var-neutral-white-color);
+  text-align: center;
+  text-decoration: none;
+
+  background-color: var(--var-neutral-black-color);
+
+  &.NavLinkActive {
+    color: var(--var-accent-1-color);
+  }
+}
