@@ -1,0 +1,11 @@
+*** In order to start with `pnpm workspace` create `pnpm-workspace.yaml` file
+
+*** --filter <name of app/package> | matches the name from `package.json` file
+
+* pnpm --filter mui-playground install | filter for `mui-playground` and install
+
+* pnpm --filter mui-playground add --save-dev @types/express | filter for `mui-playground` and add dev package
+
+* pnpm --filter mui-playground start | filter for `mui-playground` and add start
+
+* pnpm add ui --filter mui-playground --workspace | filter for `mui-playground` and add `ui` from `packages`

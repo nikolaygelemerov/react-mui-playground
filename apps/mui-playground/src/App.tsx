@@ -1,5 +1,7 @@
 import { cloneElement, FC, memo, ReactNode } from 'react';
 
+import { Button } from 'ui';
+
 import {
   AppBar,
   Container,
@@ -46,6 +48,7 @@ function ElevationScroll(props: ElevationScrollProps) {
 export const App: FC<AppProps> = memo(({ children }) => {
   return (
     <main className={styles.Container}>
+      <Button />
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <ElevationScroll>
