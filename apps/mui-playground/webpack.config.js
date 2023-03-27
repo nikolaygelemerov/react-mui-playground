@@ -176,6 +176,7 @@ module.exports = (env, argv) => {
     ],
     resolve: {
       alias: {
+        '@assets': path.resolve(__dirname, 'src', 'assets'),
         '@components': path.resolve(__dirname, 'src', 'components'),
         '@constants': path.resolve(__dirname, 'src', 'constants'),
         '@dummy': path.resolve(__dirname, 'src', 'dummy'),
