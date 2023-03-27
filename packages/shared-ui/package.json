@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "ui",
+  "name": "shared-ui",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",

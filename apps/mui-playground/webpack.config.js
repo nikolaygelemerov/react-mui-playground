@@ -51,7 +51,16 @@ module.exports = (env, argv) => {
           use: {
             loader: 'babel-loader',
             options: {
-              plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean)
+              plugins: [
+                '@babel/plugin-transform-runtime',
+                '@babel/plugin-syntax-jsx',
+                isDev && require.resolve('react-refresh/babel')
+              ].filter(Boolean),
+              presets: [
+                '@babel/preset-typescript',
+                '@babel/preset-env',
+                ['@babel/preset-react', { runtime: 'automatic' }]
+              ]
             }
           }
         },
