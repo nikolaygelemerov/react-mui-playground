@@ -10,11 +10,15 @@ import pages from '@pages';
 const useStyles = makeStyles()((theme) => ({
   NavLink: {
     color: theme.palette.custom.main,
-    textDecoration: 'none'
+    height: '100%',
+    textDecoration: 'none',
+    width: '100%'
   },
   NavLinkActive: {
     color: theme.palette.secondary.main,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    height: '100%',
+    width: '100%'
   },
   tab: {},
   tabContainer: {
