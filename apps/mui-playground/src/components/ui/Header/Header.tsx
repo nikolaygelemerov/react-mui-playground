@@ -34,7 +34,7 @@ export const Header = memo(() => {
   return (
     <ElevationScroll>
       <AppBar>
-        <Toolbar sx={{ height: 60 }}>
+        <Toolbar disableGutters>
           <img alt="company logo" className={styles.Image} src={logo} />
           <Navigation />
         </Toolbar>
