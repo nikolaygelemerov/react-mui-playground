@@ -11,128 +11,44 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 
+const {
+  cssRuleFactory,
+  devServerFactory,
+  extensions,
+  fontsRule,
+  imagesRule,
+  scssRuleFactory,
+  tsRuleE2E,
+  tsRuleFactory
+} = require('configs').webpack;
+
 const { generateEnvKeys } = require('./envKeys');
 
 const devName = 'public/[name]';
 const prodName = 'public/[name].[chunkhash]';
 
 module.exports = (env, argv) => {
+  const shouldGetCoverage = !!env.coverage;
   const shouldAnalyzeBundle = !!env.analyzeBundle;
   const isDev = argv.mode === 'development';
 
   const envKeys = generateEnvKeys(isDev, env.target);
 
+  const tsRule = shouldGetCoverage ? tsRuleE2E : tsRuleFactory(isDev);
+
   const config = {
-    devServer: {
-      client: {
-        logging: 'error',
-        overlay: true
-      },
-      compress: true,
-      historyApiFallback: {
-        index: 'http://localhost:8080'
-      },
-      hot: true,
-      open: true
-    },
+    devServer: devServerFactory(8080),
     devtool: isDev ? 'eval-source-map' : 'source-map',
     entry: {
       app: './src/index.ts'
     },
     module: {
       rules: [
-        {
-          test: /\.worker\./,
-          use: { loader: 'worker-loader' }
-        },
-        {
-          exclude: /node_modules/,
-          test: /\.(js|jsx|ts|tsx)$/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              plugins: [
-                '@babel/plugin-transform-runtime',
-                '@babel/plugin-syntax-jsx',
-                isDev && require.resolve('react-refresh/babel')
-              ].filter(Boolean),
-              presets: [
-                '@babel/preset-typescript',
-                '@babel/preset-env',
-                ['@babel/preset-react', { runtime: 'automatic' }]
-              ]
-            }
-          }
-        },
-        {
-          generator: {
-            filename: 'public/fonts/[name].[ext]'
-          },
-          test: /\.(woff|woff2|ttf|eot)$/,
-          type: 'asset/resource'
-        },
-        {
-          generator: {
-            filename: 'public/images/[name].[ext]'
-          },
-          test: /\.(png|jpe?g|gif|svg|ico)$/,
-          type: 'asset/resource'
-        },
-        {
-          test: /\.css$/,
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader
-            },
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 2,
-                modules: {
-                  localIdentName: '[name]__[local]__container__[hash:base64:5]'
-                },
-                sourceMap: true
-              }
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                postcssOptions: {
-                  plugins: ['autoprefixer']
-                }
-              }
-            }
-          ]
-        },
-        {
-          test: /\.scss$/,
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader
-            },
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 2,
-                modules: {
-                  localIdentName: '[name]__[local]__container__[hash:base64:5]'
-                },
-                sourceMap: true
-              }
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                postcssOptions: {
-                  plugins: ['autoprefixer']
-                }
-              }
-            },
-            {
-              loader: 'sass-loader'
-            }
-          ]
-        }
+        tsRule,
+        fontsRule,
+        imagesRule,
+        cssRuleFactory('mui-playground'),
+        scssRuleFactory('mui-playground')
       ]
     },
     optimization: {
@@ -172,8 +88,13 @@ module.exports = (env, argv) => {
       new webpack.DefinePlugin({
         __mode__: JSON.stringify(argv.mode),
         ...envKeys
-      })
-    ],
+      }),
+      isDev && new ReactRefreshWebpackPlugin(),
+      !isDev && new CompressionPlugin(),
+      !isDev && new CssMinimizerPlugin(),
+      !isDev && new TerserPlugin(),
+      shouldAnalyzeBundle && new BundleAnalyzerPlugin()
+    ].filter(Boolean),
     resolve: {
       alias: {
         '@assets': path.resolve(__dirname, 'src', 'assets'),
@@ -188,20 +109,9 @@ module.exports = (env, argv) => {
         '@styles': path.resolve(__dirname, 'src', 'styles'),
         '@ui': path.resolve(__dirname, 'src', 'ui')
       },
-      extensions: ['.js', '.jsx', '.ts', '.tsx']
+      extensions
     }
   };
-
-  if (!isDev) {
-    config.plugins.push(new CompressionPlugin());
-    config.optimization.minimizer.push(...[new CssMinimizerPlugin(), new TerserPlugin()]);
-
-    if (shouldAnalyzeBundle) {
-      config.plugins.push(new BundleAnalyzerPlugin());
-    }
-  } else {
-    config.plugins.push(new ReactRefreshWebpackPlugin());
-  }
 
   return config;
 };

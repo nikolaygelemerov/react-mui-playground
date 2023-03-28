@@ -8,4 +8,4 @@
 
 * pnpm --filter mui-playground start | filter for `mui-playground` and add start
 
-* pnpm add ui --filter mui-playground --workspace | filter for `mui-playground` and add `ui` from `packages`
+* pnpm add shared-ui --filter mui-playground --workspace | filter for `mui-playground` and add `ui` from `packages`
