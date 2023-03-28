@@ -2,9 +2,9 @@ import { FC, memo, ReactNode } from 'react';
 
 import { Container, CssBaseline, ThemeProvider } from '@mui/material';
 
-import { theme } from './theme';
-
 import { Header } from '@components';
+
+import { theme } from './theme';
 
 import styles from './App.scss';
 

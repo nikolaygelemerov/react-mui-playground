@@ -1,5 +1,27 @@
 {
   "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@root/*": ["./*"],
+      "@assets": ["./assets"],
+      "@assets/*": ["./assets/*"],
+      "@components": ["./components"],
+      "@components/*": ["./components/*"],
+      "@constants": ["./constants"],
+      "@constants/*": ["./constants/*"],
+      "@dummy": ["./dummy"],
+      "@dummy/*": ["./dummy/*"],
+      "@managers": ["./managers"],
+      "@managers/*": ["./managers/*"],
+      "@providers": ["./providers"],
+      "@providers/*": ["./providers/*"],
+      "@services": ["./services"],
+      "@services/*": ["./services/*"],
+      "@ui": ["./widgets"],
+      "@ui/*": ["./widgets/*"]
+    }
+  },
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }

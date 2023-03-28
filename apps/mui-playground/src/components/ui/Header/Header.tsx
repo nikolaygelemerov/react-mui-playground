@@ -2,11 +2,13 @@ import { cloneElement, memo } from 'react';
 
 import { AppBar, Toolbar, useScrollTrigger } from '@mui/material';
 
-import { Navigation } from '@root/router';
+import { Navigation } from 'shared-ui';
 
 import logo from '@assets/logo.svg';
 
 import styles from './Header.scss';
+
+import pages from '@pages';
 
 interface ElevationScrollProps {
   children: React.ReactElement;
@@ -36,7 +38,7 @@ export const Header = memo(() => {
       <AppBar>
         <Toolbar disableGutters>
           <img alt="company logo" className={styles.Image} src={logo} />
-          <Navigation />
+          <Navigation pages={pages} />
         </Toolbar>
       </AppBar>
     </ElevationScroll>
