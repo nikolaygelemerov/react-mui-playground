@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable max-len */
+
 module.exports = {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
   ...require('configs').prettier,
   importOrder: [
     '^react(.*)$',
