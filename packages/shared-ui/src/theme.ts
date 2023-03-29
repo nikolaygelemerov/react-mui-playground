@@ -15,9 +15,9 @@ declare module '@mui/material/styles' {
   }
 }
 
-const customMain = '#aa20ff';
+const customMain = '#fb79ec';
 const primaryMain = '#0b72b9';
-const primarySecondary = '#ffba60';
+const primarySecondary = '#f2cd26';
 
 export const themeOptions: ThemeOptions = {
   palette: {
