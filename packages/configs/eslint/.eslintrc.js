@@ -32,7 +32,6 @@ module.exports = {
       jsx: true,
     },
     ecmaVersion: 2022,
-    project: ["tsconfig.json"],
     sourceType: "module",
   },
   plugins: [

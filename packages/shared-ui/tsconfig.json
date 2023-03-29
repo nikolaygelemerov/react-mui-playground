@@ -21,7 +21,5 @@
       "@ui": ["./widgets"],
       "@ui/*": ["./widgets/*"]
     }
-  },
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  }
 }

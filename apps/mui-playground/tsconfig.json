@@ -30,6 +30,5 @@
         "name": "typescript-plugins-css-modules"
       }
     ]
-  },
-  "exclude": ["node_modules"]
+  }
 }
