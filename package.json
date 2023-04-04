@@ -9,15 +9,15 @@
   "scripts": {
     "app:mui": "pnpm --filter mui-playground",
     "package:shared-ui": "pnpm --filter shared-ui",
-    "format": "prettier --write app",
-    "lint": "eslint --fix app",
+    "format": "prettier --write .",
+    "lint": "eslint --fix .",
     "prepare": "simple-git-hooks"
-  },
-  "resolutions": {
-    "@storybook/react-docgen-typescript-plugin": "npm:react-docgen-typescript-plugin@1.0.2"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
+  },
+  "resolutions": {
+    "@storybook/react-docgen-typescript-plugin": "npm:react-docgen-typescript-plugin@1.0.2"
   },
   "dependencies": {
     "@babel/runtime": "7.21.0",
