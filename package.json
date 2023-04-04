@@ -11,7 +11,8 @@
     "package:shared-ui": "pnpm --filter shared-ui",
     "format": "prettier --write .",
     "lint": "eslint --fix .",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "prepare": "npx simple-git-hooks"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
