@@ -15,7 +15,7 @@
     "pre-commit": "lint-staged"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm pre-commit"
+    "pre-commit": "npx simple-git-hooks && npx lint-staged"
   },
   "resolutions": {
     "@storybook/react-docgen-typescript-plugin": "npm:react-docgen-typescript-plugin@1.0.2"
