@@ -9,8 +9,8 @@
   "scripts": {
     "app:mui": "pnpm --filter mui-playground",
     "package:shared-ui": "pnpm --filter shared-ui",
-    "format": "prettier --write ./apps ./packages",
-    "lint": "eslint --fix ./apps ./packages",
+    "format": "prettier --write .",
+    "lint": "eslint --fix .",
     "prepare": "npx simple-git-hooks"
   },
   "simple-git-hooks": {
