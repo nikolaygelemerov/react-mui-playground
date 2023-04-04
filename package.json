@@ -11,10 +11,13 @@
     "package:shared-ui": "pnpm --filter shared-ui",
     "format": "prettier --write app",
     "lint": "eslint --fix app",
-    "pre-commit": "lint-staged"
+    "prepare": "simple-git-hooks"
   },
   "resolutions": {
     "@storybook/react-docgen-typescript-plugin": "npm:react-docgen-typescript-plugin@1.0.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
   },
   "dependencies": {
     "@babel/runtime": "7.21.0",
@@ -80,6 +83,7 @@
     "react-refresh": "0.14.0",
     "sass": "1.60.0",
     "sass-loader": "13.2.2",
+    "simple-git-hooks": "^2.8.1",
     "stylelint": "^15.3.0",
     "stylelint-config-css-modules": "^4.2.0",
     "stylelint-config-prettier-scss": "^0.0.1",

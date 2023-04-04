@@ -67,6 +67,7 @@ importers:
       react-router-dom: 6.9.0
       sass: 1.60.0
       sass-loader: 13.2.2
+      simple-git-hooks: ^2.8.1
       stylelint: ^15.3.0
       stylelint-config-css-modules: ^4.2.0
       stylelint-config-prettier-scss: ^0.0.1
@@ -151,6 +152,7 @@ importers:
       react-refresh: 0.14.0
       sass: 1.60.0
       sass-loader: 13.2.2_sass@1.60.0+webpack@5.76.0
+      simple-git-hooks: 2.8.1
       stylelint: 15.4.0
       stylelint-config-css-modules: 4.2.0_stylelint@15.4.0
       stylelint-config-prettier-scss: 0.0.1_stylelint@15.4.0
@@ -14782,6 +14784,12 @@ packages:
 
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
+    dev: true
+
+  /simple-git-hooks/2.8.1:
+    resolution: {integrity: sha512-DYpcVR1AGtSfFUNzlBdHrQGPsOhuuEJ/FkmPOOlFysP60AHd3nsEpkGq/QEOdtUyT1Qhk7w9oLmFoMG+75BDog==}
+    hasBin: true
+    requiresBuild: true
     dev: true
 
   /simple-update-notifier/1.1.0:
