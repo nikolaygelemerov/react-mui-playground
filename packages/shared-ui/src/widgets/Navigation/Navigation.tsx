@@ -22,6 +22,12 @@ const useStyles = makeStyles()((theme) => {
     tab: {},
     tabContainer: {
       marginLeft: 'auto'
+    },
+    tabText: {
+      fontFamily: 'Pacifico',
+      fontSize: '1rem',
+      fontWeight: 700,
+      textTransform: 'none'
     }
   };
 });
@@ -63,7 +69,9 @@ export const Navigation = memo<NavigationProps>(({ pages }) => {
               }
               to={path}
             >
-              <Typography variant="body2">{name}</Typography>
+              <Typography className={classes.tabText} variant="body2">
+                {name}
+              </Typography>
             </NavLink>
           }
           {...a11yProps(index)}

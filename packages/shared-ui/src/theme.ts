@@ -1,3 +1,9 @@
+import '@fontsource/pacifico/400.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 import { ThemeOptions } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
@@ -17,13 +23,13 @@ declare module '@mui/material/styles' {
 
 const customMain = '#fb79ec';
 const primaryMain = '#0b72b9';
-const primarySecondary = '#f2cd26';
+const secondaryMain = '#f2cd26';
 
 export const themeOptions: ThemeOptions = {
   palette: {
     custom: { main: customMain },
     primary: { main: primaryMain },
-    secondary: { main: primarySecondary }
+    secondary: { main: secondaryMain }
   },
   typography: {
     body2: {

@@ -8,12 +8,26 @@
   "main": "index.js",
   "scripts": {
     "app:mui": "pnpm --filter mui-playground",
-    "package:shared-ui": "pnpm --filter shared-ui"
+    "package:shared-ui": "pnpm --filter shared-ui",
+    "format": "prettier --write app",
+    "lint": "eslint --fix app",
+    "pre-commit": "lint-staged"
+  },
+  "resolutions": {
+    "@storybook/react-docgen-typescript-plugin": "npm:react-docgen-typescript-plugin@1.0.2"
   },
   "dependencies": {
     "@babel/runtime": "7.21.0",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@fontsource/pacifico": "^4.5.9",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.14",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.9.0",
+    "tss-react": "^4.8.2"
   },
   "devDependencies": {
     "@babel/core": "7.21.3",
@@ -57,6 +71,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "fork-ts-checker-webpack-plugin": "8.0.0",
     "html-webpack-plugin": "5.5.0",
+    "lint-staged": "^13.2.0",
     "mini-css-extract-plugin": "2.7.5",
     "nodemon": "^2.0.22",
     "postcss": "^8.4.21",
@@ -85,8 +100,5 @@
     "webpack-bundle-analyzer": "4.8.0",
     "webpack-cli": "5.0.1",
     "webpack-dev-server": "4.11.1"
-  },
-  "resolutions": {
-    "@storybook/react-docgen-typescript-plugin": "npm:react-docgen-typescript-plugin@1.0.2"
   }
 }

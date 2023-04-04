@@ -37,17 +37,8 @@
     "last 2 Safari versions"
   ],
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@fontsource/roboto": "^4.5.8",
-    "@mui/icons-material": "^5.11.11",
-    "@mui/material": "^5.11.14",
     "configs": "workspace:^1.0.0",
     "express": "4.18.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-router-dom": "6.9.0",
-    "shared-ui": "workspace:^1.0.0",
-    "tss-react": "^4.8.2"
+    "shared-ui": "workspace:^1.0.0"
   }
 }

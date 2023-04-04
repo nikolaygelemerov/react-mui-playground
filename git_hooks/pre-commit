@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. "$(dirname "$0")/../path/to/your/yarn/binary/yarn"
+
+yarn lint-staged

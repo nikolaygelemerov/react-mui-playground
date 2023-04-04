@@ -1,7 +1,15 @@
 import { memo } from 'react';
 
-export const Button = memo(() => {
-  return <button type="button">Button</button>;
+import { Button as ButtonMUI, ButtonProps as ButtonPropsMUI } from '@mui/material';
+
+interface ButtonProps {
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  text: string;
+  variant: ButtonPropsMUI['variant'];
+}
+
+export const Button = memo<ButtonProps>(({ onClick, text, variant }) => {
+  return <ButtonMUI onClick={onClick} variant={variant} />;
 });
 
 Button.displayName = 'Button';

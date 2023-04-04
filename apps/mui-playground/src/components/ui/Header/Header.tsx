@@ -1,14 +1,13 @@
+import logo from '@assets/logo.svg';
+import { Navigation } from 'shared-ui';
+
 import { cloneElement, memo } from 'react';
 
 import { AppBar, Toolbar, useScrollTrigger } from '@mui/material';
 
-import { Navigation } from 'shared-ui';
-
-import logo from '@assets/logo.svg';
+import pages from '@pages';
 
 import styles from './Header.scss';
-
-import pages from '@pages';
 
 interface ElevationScrollProps {
   children: React.ReactElement;
