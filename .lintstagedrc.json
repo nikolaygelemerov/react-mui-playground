@@ -1,5 +1,4 @@
 {
   "*.json": "yarn format",
-  "*.{js,jsx,ts,tsx}": ["yarn format", "yarn lint"],
-  "ignore": ["node_modules"]
+  "*.{js,jsx,ts,tsx}": ["yarn format", "yarn lint"]
 }

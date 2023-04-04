@@ -11,10 +11,11 @@
     "package:shared-ui": "pnpm --filter shared-ui",
     "format": "prettier --write .",
     "lint": "eslint --fix .",
-    "prepare": "simple-git-hooks"
+    "prepare": "simple-git-hooks",
+    "pre-commit": "lint-staged"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
+    "pre-commit": "pnpm pre-commit"
   },
   "resolutions": {
     "@storybook/react-docgen-typescript-plugin": "npm:react-docgen-typescript-plugin@1.0.2"
