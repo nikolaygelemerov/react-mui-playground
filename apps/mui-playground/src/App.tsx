@@ -13,6 +13,8 @@ interface AppProps {
 }
 
 export const App: FC<AppProps> = memo(({ children }) => {
+  console.log('Here');
+
   return (
     <main className={styles.Container}>
       <CssBaseline />
