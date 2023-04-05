@@ -7,7 +7,7 @@ export default {
   title: 'UI/Button'
 } as ComponentMeta<typeof ButtonCmp>;
 
-console.log('HERE');
+console.log('HEREsss');
 
 const Template: ComponentStory<typeof ButtonCmp> = (): JSX.Element => <ButtonCmp />;
 
