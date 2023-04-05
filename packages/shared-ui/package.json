@@ -7,8 +7,8 @@
   "scripts": {
     "start:storybook": "start-storybook -p 3000",
     "build:storybook": "build-storybook",
+    "lint": "eslint --fix src",
     "format": "prettier --write src",
-    "lint": "eslint --quiet --fix src",
     "pre-commit": "lint-staged"
   },
   "keywords": [],
