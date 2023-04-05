@@ -6,7 +6,9 @@
   "main": "index.ts",
   "scripts": {
     "start:storybook": "start-storybook -p 3000",
-    "build:storybook": "build-storybook"
+    "build:storybook": "build-storybook",
+    "format": "prettier --write src",
+    "lint": "eslint --fix src"
   },
   "keywords": [],
   "author": "",
