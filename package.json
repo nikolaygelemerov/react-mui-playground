@@ -9,11 +9,11 @@
   "scripts": {
     "app:mui": "pnpm --filter mui-playground",
     "package:shared-ui": "pnpm --filter shared-ui",
-    "pre-commit": "pnpm -r pre-commit",
+    "lint-staged": "pnpm -r lint-staged",
     "prepare": "npx simple-git-hooks"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm pre-commit"
+    "pre-commit": "pnpm lint-staged"
   },
   "resolutions": {
     "@storybook/react-docgen-typescript-plugin": "npm:react-docgen-typescript-plugin@1.0.2"
