@@ -9,6 +9,8 @@ interface ButtonProps {
 }
 
 export const Button = memo<ButtonProps>(({ onClick, variant }) => {
+  const r = 20;
+
   return <ButtonMUI onClick={onClick} variant={variant} />;
 });
 
