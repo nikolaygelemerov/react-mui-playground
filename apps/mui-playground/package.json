@@ -15,7 +15,8 @@
     "build": "webpack --mode production",
     "start:server": "set NODE_ENV=development && nodemon --exec ts-node ./server/main.ts",
     "format": "prettier --write src",
-    "lint": "eslint --fix src"
+    "lint": "eslint --max-warnings=0 --fix src",
+    "pre-commit": "lint-staged"
   },
   "nodemonConfig": {
     "ignore": [
