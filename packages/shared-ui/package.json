@@ -9,7 +9,8 @@
     "build:storybook": "build-storybook",
     "lint": "eslint --fix src",
     "format": "prettier --write src",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "tsc-check": "tsc -p tsconfig.json --noEmit"
   },
   "keywords": [],
   "author": "",

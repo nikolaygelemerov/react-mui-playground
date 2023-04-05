@@ -1,4 +1,0 @@
-{
-  "*.json": "pnpm format",
-  "*.{js,jsx,ts,tsx}": ["pnpm format --max-warnings", "pnpm lint --max-warnings"]
-}

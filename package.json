@@ -9,7 +9,7 @@
   "scripts": {
     "app:mui": "pnpm --filter mui-playground",
     "package:shared-ui": "pnpm --filter shared-ui",
-    "lint-staged": "pnpm -r pre-commit",
+    "pre-commit": "pnpm -r pre-commit",
     "prepare": "npx simple-git-hooks"
   },
   "simple-git-hooks": {
