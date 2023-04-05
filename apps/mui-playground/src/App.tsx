@@ -13,7 +13,7 @@ interface AppProps {
 }
 
 export const App: FC<AppProps> = memo(({ children }) => {
-  const mssssssssa = 20;
+  const mssddssssssa = 20;
 
   return (
     <main className={styles.Container}>
