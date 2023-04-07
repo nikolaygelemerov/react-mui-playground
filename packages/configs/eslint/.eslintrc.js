@@ -60,6 +60,7 @@ module.exports = {
     ],
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
+    "react/jsx-sort-props": ["error", { ignoreCase: true }],
     "react/prop-types": 0,
     "sort-destructure-keys/sort-destructure-keys": [2, { caseSensitive: false }],
     "sort-keys-fix/sort-keys-fix": ["error", "asc", { caseSensitive: false, natural: false }],

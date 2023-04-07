@@ -34,23 +34,23 @@ export const Menu = React.memo<MenuProps>(
     return (
       <>
         <Button
+          aria-controls={open ? menuId : undefined}
+          aria-expanded={open ? 'true' : undefined}
+          aria-haspopup="true"
           color="secondary"
           id={buttonId}
-          aria-controls={open ? menuId : undefined}
-          aria-haspopup="true"
-          aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
         >
           {buttonText}
         </Button>
         <MenuMUI
-          id={menuId}
           anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
+          id={menuId}
           MenuListProps={{
             'aria-labelledby': buttonId
           }}
+          onClose={handleClose}
+          open={open}
           variant={variant}
         >
           {options.map((option) => (
