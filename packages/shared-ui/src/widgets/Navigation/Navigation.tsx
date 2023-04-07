@@ -24,9 +24,9 @@ const useStyles = makeStyles()((theme) => {
       marginLeft: 'auto'
     },
     tabText: {
-      fontFamily: 'Pacifico',
+      fontFamily: 'Roboto',
       fontSize: '1rem',
-      fontWeight: 700,
+      fontWeight: 500,
       textTransform: 'none'
     }
   };
@@ -57,7 +57,12 @@ export const Navigation = memo<NavigationProps>(({ pages }) => {
   };
 
   return (
-    <Tabs className={classes.tabContainer} onChange={handleChange} value={value}>
+    <Tabs
+      className={classes.tabContainer}
+      indicatorColor="secondary"
+      onChange={handleChange}
+      value={value}
+    >
       {pages.map(({ name, path }, index) => (
         <Tab
           className={classes.tab}

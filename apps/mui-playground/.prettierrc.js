@@ -8,6 +8,7 @@ module.exports = {
     '^@mui(.*)$',
     '^@emotion(.*)$',
     '^@rounik(.*)$',
+    '^shared-ui(.*)$',
     '^@components(.*)|@components/(.*)|^@constants(.*)|@constants/(.*)|^@dummy(.*)|@dummy/(.*)|@managers(.*)|@managers/(.*)|@pages(.*)|@pages/(.*)|@providers(.*)|@providers/(.*)|@root(.*)|^@root/(.*)|@services(.*)|@services/(.*)|@styles(.*)|@styles/(.*)|@ui(.*)|@ui/(.*)$',
     '^[./].*(?<!\\.scss)$',
     '\\.scss$'

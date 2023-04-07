@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "app:mui": "pnpm --filter mui-playground",
-    "package:shared-ui": "pnpm --filter shared-ui",
+    "package:shared": "pnpm --filter shared-ui",
     "pre-commit": "pnpm -r pre-commit",
     "prepare": "npx simple-git-hooks"
   },

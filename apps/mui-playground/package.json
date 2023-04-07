@@ -14,8 +14,8 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "start:server": "set NODE_ENV=development && nodemon --exec ts-node ./server/main.ts",
-    "lint": "eslint --fix src",
-    "format": "prettier --write src",
+    "lint": "eslint --ignore-path ../../.gitignore --fix src",
+    "format": "prettier --ignore-path ../../.gitignore --write src",
     "pre-commit": "lint-staged",
     "tsc-check": "tsc -p tsconfig.json --noEmit"
   },

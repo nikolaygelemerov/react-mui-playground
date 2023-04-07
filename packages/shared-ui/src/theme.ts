@@ -21,9 +21,9 @@ declare module '@mui/material/styles' {
   }
 }
 
-const customMain = '#fb79ec';
+const customMain = '#f37e39';
 const primaryMain = '#0b72b9';
-const secondaryMain = '#f2cd26';
+const secondaryMain = '#fff';
 
 export const themeOptions: ThemeOptions = {
   palette: {
@@ -34,6 +34,11 @@ export const themeOptions: ThemeOptions = {
   typography: {
     body2: {
       fontWeight: 300
+    },
+    button: {
+      fontFamily: 'Pacifico',
+      fontSize: '1rem',
+      textTransform: 'none'
     }
   }
 };
