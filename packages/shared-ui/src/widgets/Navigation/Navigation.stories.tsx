@@ -21,7 +21,9 @@ const PAGES = [
 ];
 
 const Template: ComponentStory<typeof NavigationCmp> = (): JSX.Element => (
-  <NavigationCmp pages={PAGES} />
+  <div style={{ backgroundColor: 'grey', borderRadius: '4px', padding: '20px' }}>
+    <NavigationCmp pages={PAGES} />
+  </div>
 );
 
 export const Navigation = Template.bind({});
