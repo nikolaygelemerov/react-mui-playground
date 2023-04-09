@@ -8,7 +8,13 @@ export default {
 } as ComponentMeta<typeof ButtonCmp>;
 
 const Template: ComponentStory<typeof ButtonCmp> = (): JSX.Element => (
-  <ButtonCmp onClick={function (): void {}} text="Click me!" variant={undefined} />
+  <ButtonCmp
+    onClick={() => {
+      console.log('Button Click!');
+    }}
+    text="Click me!"
+    variant="contained"
+  />
 );
 
 export const Button = Template.bind({});

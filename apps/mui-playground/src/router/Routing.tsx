@@ -27,8 +27,8 @@ export const Routing = memo(() => {
         <App>
           <Routes>
             {renderRoutes(pages)}
-            <Route path="not-found" element={<NotFound />} />
-            <Route path="*" element={<Navigate to="not-found" />} />
+            <Route element={<NotFound />} path="not-found" />
+            <Route element={<Navigate to="not-found" />} path="*" />
           </Routes>
         </App>
       </Suspense>

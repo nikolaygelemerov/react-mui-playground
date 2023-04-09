@@ -6,10 +6,6 @@ const { extensions, fontsRule, imagesRule, miniCssExtractPluginTest, scssRuleFac
   require('configs').webpack;
 
 module.exports = {
-  resolve: {
-    alias,
-    extensions: [...extensions, '.js', '.jsx']
-  },
   module: {
     rules: [tsRuleCy, fontsRule, imagesRule, scssRuleFactory('shared-ui')]
   },
@@ -18,5 +14,9 @@ module.exports = {
     new webpack.DefinePlugin({
       __mode__: 'development'
     })
-  ]
+  ],
+  resolve: {
+    alias,
+    extensions: [...extensions, '.js', '.jsx']
+  }
 };

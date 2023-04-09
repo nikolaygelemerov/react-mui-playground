@@ -20,6 +20,7 @@ importers:
       '@fontsource/roboto': ^4.5.8
       '@mui/icons-material': ^5.11.11
       '@mui/material': ^5.11.14
+      '@mui/utils': ^5.11.13
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.10
       '@trivago/prettier-plugin-sort-imports': ^4.1.1
       '@types/express': ^4.17.17
@@ -85,6 +86,7 @@ importers:
       typescript: 4.9.5
       typescript-plugin-css-modules: 4.2.2
       typings-for-css-modules-loader: 1.7.0
+      utils: link:@types/@mui/utils
       webpack: 5.76.0
       webpack-bundle-analyzer: 4.8.0
       webpack-cli: 5.0.1
@@ -97,6 +99,7 @@ importers:
       '@fontsource/roboto': 4.5.8
       '@mui/icons-material': 5.11.16_erxbvppvw6koktnm4x3xkodjkq
       '@mui/material': 5.11.16_quat5witkhq3gbgscvy3yo7r7a
+      '@mui/utils': 5.11.13_react@18.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-router-dom: 6.9.0_biqbaboplfbrettd7655fr4n2y
@@ -169,6 +172,7 @@ importers:
       typescript: 4.9.5
       typescript-plugin-css-modules: 4.2.2_6qtx7vkbdhwvdm4crzlegk4mvi
       typings-for-css-modules-loader: 1.7.0_css-loader@6.7.3
+      utils: link:@types/@mui/utils
       webpack: 5.76.0_webpack-cli@5.0.1
       webpack-bundle-analyzer: 4.8.0
       webpack-cli: 5.0.1_jkfmkh54fty5hi5ax7xfrvyyji

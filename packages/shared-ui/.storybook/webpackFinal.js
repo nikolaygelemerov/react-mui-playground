@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { extensions, miniCssExtractPluginTest, scssRuleFactory } = require('configs').webpack;
 const alias = require('./alias');
 

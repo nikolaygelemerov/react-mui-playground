@@ -1,24 +1,26 @@
 import { Story } from '@storybook/react';
 
-import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import { createTheme } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
+import {
+  Experimental_CssVarsProvider as CssVarsProvider,
+  experimental_extendTheme as extendTheme
+} from '@mui/material/styles';
 
 import { themeOptions } from '../src/theme';
 
-const theme = createTheme(themeOptions);
+const theme = extendTheme(themeOptions);
 
 export const decorators = [
   (StoryFn: Story) => (
     <>
       <CssBaseline />
-      <ThemeProvider theme={theme}>
+      <CssVarsProvider theme={theme}>
         <BrowserRouter>
           <StoryFn />
         </BrowserRouter>
-      </ThemeProvider>
+      </CssVarsProvider>
     </>
   )
 ];

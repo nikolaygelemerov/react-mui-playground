@@ -3,26 +3,21 @@ import { makeStyles } from 'tss-react/mui';
 
 import { cloneElement, memo } from 'react';
 
-import { AppBar, Button, Toolbar, useScrollTrigger } from '@mui/material';
+import { AppBar, Toolbar, useScrollTrigger } from '@mui/material';
+import { useColorScheme } from '@mui/material/styles';
 
-import { CSSObject } from '@emotion/react';
-
-import { Menu, Navigation } from 'shared-ui';
+import { Button, Menu, Navigation } from 'shared-ui';
 
 import pages from '@pages';
 
 import styles from './Header.scss';
 
-const useStyles = makeStyles()((theme) => {
+const useStyles = makeStyles()(() => {
   return {
     button: {
-      ...theme.typography.button,
-      backgroundColor: theme.palette.custom.main,
-      borderRadius: '50px',
-      height: '45px',
       marginLeft: '50px',
       marginRight: '25px'
-    } as CSSObject
+    }
   };
 });
 
@@ -51,18 +46,27 @@ function ElevationScroll(props: ElevationScrollProps) {
 export const Header = memo(() => {
   const { classes } = useStyles();
 
+  const { mode, setMode } = useColorScheme();
+
   return (
     <ElevationScroll>
-      <AppBar>
+      <AppBar enableColorOnDark>
         <Toolbar disableGutters>
           <img alt="company logo" className={styles.Image} src={logo} />
           <Navigation pages={pages} />
-          <Button className={classes.button} variant="contained">
-            Free Estimate
-          </Button>
+          <Button
+            className={classes.button}
+            onClick={() => {
+              setMode(mode === 'light' ? 'dark' : 'light');
+            }}
+            text={mode === 'light' ? 'Turn dark' : 'Turn light'}
+            variant="contained"
+          />
           <Menu
             buttonId="button-header"
             buttonText="Menu"
+            className={classes.button}
+            menuId="menu-header"
             options={[
               {
                 id: 1,
@@ -86,7 +90,6 @@ export const Header = memo(() => {
                 }
               }
             ]}
-            menuId="menu-header"
           />
         </Toolbar>
       </AppBar>

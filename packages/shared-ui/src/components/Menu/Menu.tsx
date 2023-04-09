@@ -5,13 +5,14 @@ import { Button, MenuItem, Menu as MenuMUI, MenuProps as MenuPropsMUI } from '@m
 interface MenuProps extends Pick<MenuPropsMUI, 'onClose'> {
   buttonId: string;
   buttonText: string;
+  className?: string;
   menuId: string;
   options: { id: string | number; label: string; onClick: () => void }[];
   variant?: MenuPropsMUI['variant'];
 }
 
 export const Menu = React.memo<MenuProps>(
-  ({ buttonId, buttonText, menuId, onClose, options, variant = 'menu' }) => {
+  ({ buttonId, buttonText, className, menuId, onClose, options, variant = 'menu' }) => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
     const open = Boolean(anchorEl);
@@ -37,9 +38,10 @@ export const Menu = React.memo<MenuProps>(
           aria-controls={open ? menuId : undefined}
           aria-expanded={open ? 'true' : undefined}
           aria-haspopup="true"
-          color="secondary"
+          className={className}
           id={buttonId}
           onClick={handleClick}
+          variant="contained"
         >
           {buttonText}
         </Button>

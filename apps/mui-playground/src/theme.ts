@@ -1,7 +1,8 @@
-import { createTheme } from '@mui/material/styles';
+import { CssVarsThemeOptions, experimental_extendTheme as extendTheme } from '@mui/material/styles';
+import { deepmerge } from '@mui/utils';
 
 import { themeOptions } from 'shared-ui';
 
-export const theme = createTheme({
-  ...themeOptions
-});
+export const newThemeOptions: CssVarsThemeOptions = {};
+
+export const theme = extendTheme(deepmerge(themeOptions, newThemeOptions));
