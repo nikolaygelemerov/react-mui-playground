@@ -1,12 +1,12 @@
 {
   "name": "react-mui-playground",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "keywords": [],
   "license": "ISC",
   "author": "",
   "main": "index.js",
-  "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"
