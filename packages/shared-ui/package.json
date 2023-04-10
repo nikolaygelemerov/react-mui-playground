@@ -1,9 +1,9 @@
 {
-  "private": true,
   "name": "shared-ui",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
+  "private": true,
   "scripts": {
     "start:storybook": "start-storybook -p 3000",
     "build:storybook": "build-storybook",
