@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "configs": "workspace:^1.0.0"
+    "configs": "*"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "6.5.16",
