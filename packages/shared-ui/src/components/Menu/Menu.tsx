@@ -11,6 +11,8 @@ interface MenuProps extends Pick<MenuPropsMUI, 'onClose'> {
   variant?: MenuPropsMUI['variant'];
 }
 
+console.log('HERE');
+
 export const Menu = React.memo<MenuProps>(
   ({ buttonId, buttonText, className, menuId, onClose, options, variant = 'menu' }) => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
