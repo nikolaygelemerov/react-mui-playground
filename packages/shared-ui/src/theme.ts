@@ -5,7 +5,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 import { blue, grey } from '@mui/material/colors';
-import { CssVarsThemeOptions } from '@mui/material/styles';
+import type { CssVarsThemeOptions } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   type PaletteCustom = Record<string, string>;
