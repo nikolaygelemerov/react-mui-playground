@@ -5,6 +5,7 @@
   "keywords": [],
   "license": "ISC",
   "author": "",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "app:mui": "pnpm --filter mui-playground",
