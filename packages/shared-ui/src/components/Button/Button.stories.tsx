@@ -1,21 +1,20 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta } from '@storybook/react';
+import type { StoryFn } from '@storybook/react';
 
+import type { ButtonProps } from './Button';
 import { Button as ButtonCmp } from './Button';
 
 export default {
   component: ButtonCmp,
   title: 'UI/Button'
-} as ComponentMeta<typeof ButtonCmp>;
+} as Meta<typeof ButtonCmp>;
 
-const Template: ComponentStory<typeof ButtonCmp> = (): JSX.Element => (
-  <ButtonCmp
-    onClick={() => {
-      console.log('Button Click!');
-    }}
-    text="Click me!"
-    variant="contained"
-  />
-);
+export const Button: StoryFn<ButtonProps> = (args) => <ButtonCmp {...args} />;
 
-export const Button = Template.bind({});
-Button.args = {};
+Button.args = {
+  onClick: () => {
+    console.log('Button Click!');
+  },
+  text: 'Click me!',
+  variant: 'contained'
+};

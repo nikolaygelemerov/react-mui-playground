@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Button, MenuItem, Menu as MenuMUI, MenuProps as MenuPropsMUI } from '@mui/material';
+import type { MenuProps as MenuPropsMUI } from '@mui/material';
+import { Button, MenuItem, Menu as MenuMUI } from '@mui/material';
 
 interface MenuProps extends Pick<MenuPropsMUI, 'onClose'> {
   buttonId: string;

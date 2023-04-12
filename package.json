@@ -12,13 +12,15 @@
     "packages/*"
   ],
   "scripts": {
-    "app:mui": "npm run start -w ./apps/mui-playground",
-    "package:shared": "npm run start:storybook -w ./packages/shared-ui",
-    "pre-commit": "npm run pre-commit --workspaces --if-present",
+    "app:mui": "pnpm --filter mui-playground",
+    "package:shared": "pnpm --filter shared-ui",
+    "start": "concurrently \"pnpm app:mui start\" \"pnpm package:shared start:storybook\"",
+    "start:tmux": "tmux new-session -d -s mysession 'pnpm app:mui start ; bash'  \\; split-window -hf 'pnpm package:shared start:storybook ; bash' ; tmux attach-session -d -t mysession",
+    "pre-commit": "pnpm -r pre-commit",
     "prepare": "npx simple-git-hooks"
   },
   "simple-git-hooks": {
-    "pre-commit": "npm run pre-commit"
+    "pre-commit": "pnpm pre-commit"
   },
   "resolutions": {
     "@storybook/react-docgen-typescript-plugin": "npm:react-docgen-typescript-plugin@1.0.2"

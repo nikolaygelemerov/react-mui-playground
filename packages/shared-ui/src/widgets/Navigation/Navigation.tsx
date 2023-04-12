@@ -32,7 +32,7 @@ const useStyles = makeStyles()((theme) => {
   };
 });
 
-interface NavigationProps {
+export interface NavigationProps {
   pages: {
     Element: React.FC;
     name: string;

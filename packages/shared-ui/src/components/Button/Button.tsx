@@ -1,8 +1,9 @@
 import { memo } from 'react';
 
-import { Button as ButtonMUI, ButtonProps as ButtonPropsMUI } from '@mui/material';
+import type { ButtonProps as ButtonPropsMUI } from '@mui/material';
+import { Button as ButtonMUI } from '@mui/material';
 
-interface ButtonProps {
+export interface ButtonProps {
   className?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   text: string;

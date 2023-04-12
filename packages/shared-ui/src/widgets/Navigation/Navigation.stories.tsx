@@ -1,11 +1,13 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta } from '@storybook/react';
+import type { StoryFn } from '@storybook/react';
 
+import type { NavigationProps } from './Navigation';
 import { Navigation as NavigationCmp } from './Navigation';
 
 export default {
   component: NavigationCmp,
   title: 'Widgets/Navigation'
-} as ComponentMeta<typeof NavigationCmp>;
+} as Meta<typeof NavigationCmp>;
 
 const PAGES = [
   {
@@ -20,11 +22,10 @@ const PAGES = [
   }
 ];
 
-const Template: ComponentStory<typeof NavigationCmp> = (): JSX.Element => (
+export const Navigation: StoryFn<NavigationProps> = (args) => (
   <div style={{ backgroundColor: 'grey', borderRadius: '4px', padding: '20px' }}>
-    <NavigationCmp pages={PAGES} />
+    <NavigationCmp {...args} />
   </div>
 );
 
-export const Navigation = Template.bind({});
-Navigation.args = {};
+Navigation.args = { pages: PAGES };

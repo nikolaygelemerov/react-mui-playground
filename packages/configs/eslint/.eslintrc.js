@@ -48,6 +48,7 @@ module.exports = {
     "unused-imports",
   ],
   rules: {
+    "@typescript-eslint/consistent-type-imports": "error",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "max-len": ["warn", { code: 100 }],

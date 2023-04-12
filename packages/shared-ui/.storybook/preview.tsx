@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react';
+import type { Preview, StoryFn } from '@storybook/react';
 
 import { BrowserRouter } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ import { themeOptions } from '../src/theme';
 const theme = extendTheme(themeOptions);
 
 export const decorators = [
-  (StoryFn: Story) => (
+  (StoryFn: StoryFn) => (
     <>
       <CssBaseline />
       <CssVarsProvider theme={theme}>
@@ -25,19 +25,11 @@ export const decorators = [
   )
 ];
 
-// Define parameters for Storybook
-export const parameters = {
-  // Configure Action Logger addon to show action arguments in the UI
-  actions: { argTypesRegex: '^on[A-Z].*' },
-
-  // Configure Control addon to match control inputs with control types
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/
-    }
-  },
-
-  // Center the preview of the story in the Storybook UI
-  layout: 'centered'
+const preview: Preview = {
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    layout: 'centered'
+  }
 };
+
+export default preview;
