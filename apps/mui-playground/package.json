@@ -9,6 +9,7 @@
   ],
   "license": "ISC",
   "author": "",
+  "private": true,
   "main": "index.ts",
   "scripts": {
     "build": "webpack --mode production",
