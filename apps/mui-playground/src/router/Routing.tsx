@@ -4,7 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import pages, { NotFound } from '@pages';
 
 import { App } from '../App';
-import { RouteType } from './types';
+import type { RouteType } from './types';
 
 const renderRoutes = (pagesToRender: RouteType[]) => {
   return pagesToRender.map(({ children, Element, path }) => {

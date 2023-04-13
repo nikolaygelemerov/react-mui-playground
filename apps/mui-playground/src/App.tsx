@@ -1,4 +1,5 @@
-import { FC, memo, ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
+import { memo } from 'react';
 
 import { Container, CssBaseline } from '@mui/material';
 import { Experimental_CssVarsProvider as CssVarsProvider } from '@mui/material/styles';
