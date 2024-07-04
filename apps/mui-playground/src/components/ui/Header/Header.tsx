@@ -10,7 +10,7 @@ import { Button, Menu, Navigation } from 'shared-ui';
 
 import pages from '@pages';
 
-import styles from './Header.scss';
+import * as styles from './Header.scss';
 
 const useStyles = makeStyles()(() => {
   return {

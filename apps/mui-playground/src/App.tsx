@@ -8,7 +8,7 @@ import { Header } from '@components';
 
 import { theme } from './theme';
 
-import styles from './App.scss';
+import * as styles from './App.scss';
 
 interface AppProps {
   children: ReactNode;

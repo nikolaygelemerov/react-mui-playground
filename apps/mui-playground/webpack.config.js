@@ -37,7 +37,7 @@ module.exports = (env, argv) => {
   const tsRule = shouldGetCoverage ? tsRuleE2E : tsRuleFactory(isDev);
 
   const config = {
-    devServer: devServerFactory(8080),
+    devServer: devServerFactory(8089),
     devtool: isDev ? 'eval-source-map' : 'source-map',
     entry: {
       app: './src/index.ts'

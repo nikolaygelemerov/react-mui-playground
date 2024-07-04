@@ -15,3 +15,6 @@ npm-debug.log
 pnpm-debug.log
 
 storybook-static
+
+# os:
+.DS_Store
