@@ -51,7 +51,7 @@ module.exports = {
     "@typescript-eslint/consistent-type-imports": "error",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
-    "max-len": ["warn", { code: 100 }],
+    "max-len": ["warn", { code: 140 }],
     "no-duplicate-imports": "off",
     "prettier/prettier": [
       "warn",

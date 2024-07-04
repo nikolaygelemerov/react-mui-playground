@@ -1,25 +1,17 @@
 import { makeStyles } from 'tss-react/mui';
 
-import { memo, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { memo, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Tab, Tabs, Typography } from '@mui/material';
 
 const useStyles = makeStyles()((theme) => {
   return {
-    NavLink: {
-      color: theme.palette.custom.main,
-      height: '100%',
-      textDecoration: 'none',
-      width: '100%'
+    tab: {
+      '&.Mui-selected': {
+        color: theme.palette.secondary.main
+      }
     },
-    NavLinkActive: {
-      color: theme.palette.secondary.main,
-      fontWeight: 'bold',
-      height: '100%',
-      width: '100%'
-    },
-    tab: {},
     tabContainer: {
       marginLeft: 'auto'
     },
@@ -33,6 +25,7 @@ const useStyles = makeStyles()((theme) => {
 });
 
 export interface NavigationProps {
+  onChange?: (newValue: number) => void;
   pages: {
     Element: React.FC;
     name: string;
@@ -47,7 +40,9 @@ function a11yProps(index: number) {
   };
 }
 
-export const Navigation = memo<NavigationProps>(({ pages }) => {
+export const Navigation = memo<NavigationProps>(({ onChange, pages }) => {
+  const navigate = useNavigate();
+
   const [value, setValue] = useState(0);
 
   const { classes } = useStyles();
@@ -56,33 +51,35 @@ export const Navigation = memo<NavigationProps>(({ pages }) => {
     setValue(newValue);
   };
 
+  useEffect(() => {
+    onChange?.(value);
+  }, [onChange, value]);
+
+  console.log('value: ', value);
+
   return (
-    <Tabs
-      className={classes.tabContainer}
-      indicatorColor="secondary"
-      onChange={handleChange}
-      value={value}
-    >
-      {pages.map(({ name, path }, index) => (
-        <Tab
-          className={classes.tab}
-          key={path}
-          label={
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? `${classes.NavLink} ${classes.NavLinkActive}` : classes.NavLink
-              }
-              to={path}
-            >
+    <>
+      <Tabs
+        className={classes.tabContainer}
+        indicatorColor="secondary"
+        onChange={handleChange}
+        value={value}
+      >
+        {pages.map(({ name, path }, index) => (
+          <Tab
+            className={classes.tab}
+            key={path}
+            label={
               <Typography className={classes.tabText} variant="body2">
                 {name}
               </Typography>
-            </NavLink>
-          }
-          {...a11yProps(index)}
-        />
-      ))}
-    </Tabs>
+            }
+            onClick={() => navigate(path)}
+            {...a11yProps(index)}
+          />
+        ))}
+      </Tabs>
+    </>
   );
 });
 
